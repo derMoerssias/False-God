@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Retro Geheimseite</title>
-    <style>
-        body {
-            background-color: black;
-            color: lime;
-            font-family: "Courier New", Courier, monospace;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <title>Willkommen</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('images/karona.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Arial Black', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
 
-        #content {
-            display: none;
-        }
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+    }
 
-        .game {
-            margin: 15px 0;
-        }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 14px;
+      width: 200px;
+      margin-top: 10px;
+    }
 
-        a {
-            color: cyan;
-        }
-    </style>
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Willkommen auf der geheimen Retro-Seite!</h1>
-    <p>Bitte Passwort eingeben, um fortzufahren:</p>
+  <div class="container">
+    <h2>Geheimer Zugang</h2>
+    <p>Bitte Passwort eingeben:</p>
     <input type="password" id="passwordInput" placeholder="Passwort">
-    <button onclick="checkPassword()">Einloggen</button>
+    <button onclick="checkPassword()">Bestätigen</button>
+  </div>
 
-    <div id="content">
-        <h2>📚 Geschichten</h2>
-        <p>Hier kannst du geheime Geschichten herunterladen:</p>
-        <ul>
-            <li><a href="geschichten/geschichte1.pdf" download>Die verlorene Stadt</a></li>
-            <li><a href="geschichten/geschichte2.pdf" download>Der Zug um Mitternacht</a></li>
-        </ul>
-
-        <h2>🎲 Gesellschaftsspiele</h2>
-        <div class="game"><strong>Schach:</strong> Strategieklassiker mit 64 Feldern.</div>
-        <div class="game"><strong>Cluedo:</strong> Wer war der Mörder? Detektivspiel mit Verdächtigen.</div>
-        <div class="game"><strong>Rommé:</strong> Kartenspiel für Denker und Strategen.</div>
-        <div class="game"><strong>Monopoly:</strong> Kauf dich reich – oder geh bankrott!</div>
-    </div>
-
-    <script>
-        function checkPassword() {
-            const input = document.getElementById("passwordInput").value;
-            if (input === "Power9") {
-                document.getElementById("content").style.display = "block";
-            } else {
-                alert("Falsches Passwort!");
-            }
-        }
-    </script>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === "Power9") {
+        window.location.href = "geschichten.html";
+      } else {
+        alert("Falsches Passwort.");
+      }
+    }
+  </script>
 </body>
 </html>
