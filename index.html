@@ -2,61 +2,63 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Karona, False God</title>
+  <title>password Eingabe</title>
   <style>
     body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
       margin: 0;
-      padding: 0;
-      background-image: url('images/karona.jpg');
-      background-size: cover;
-      background-position: center;
-      font-family: 'Arial Black', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      color: white;
     }
-
     .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 15px;
       text-align: center;
     }
-
     input[type="password"] {
       padding: 10px;
-      font-size: 14px;
-      width: 200px;
-      margin-top: 10px;
+      font-size: 16px;
+      border: 2px solid #fff;
+      background: #000;
+      color: #fff;
+      border-radius: 5px;
+      outline: none;
+      margin-bottom: 10px;
     }
-
     button {
-      padding: 10px 20px;
-      font-size: 14px;
-      margin-left: 10px;
+      padding: 10px 24px;
+      font-size: 16px;
+      color: #000;
+      background: #fff;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Karona, False God</h2>
-    <p>Bitte Passwort eingeben:</p>
-    <input type="password" id="passwordInput" placeholder="Passwort">
-    <button onclick="checkPassword()">Bestätigen</button>
+    <h2>enter password</h2>
+    <input type="password" id="passwordInput" placeholder="">
+    <br>
+    <button onclick="checkPassword()">submit password</button>
   </div>
 
   <script>
     function checkPassword() {
       const input = document.getElementById("passwordInput").value;
       if (input === "Power9") {
-        window.location.href = "geschichten.html";
+        window.location.href = "downloads.html";
       } else {
         alert("Falsches Passwort.");
       }
     }
+    document.getElementById("passwordInput").addEventListener("keydown", function(event) {
+      if(event.key === "Enter") checkPassword();
+    });
   </script>
 </body>
 </html>
