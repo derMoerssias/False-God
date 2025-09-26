@@ -2,62 +2,57 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Datei Verzeichnis</title>
+  <title>PDF Downloads</title>
   <style>
     body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
       margin: 0;
-      padding: 20px;
-      background-image:
-        url('images/schach.jpg'),
-        url('images/monopoly.jpg'),
-        url('images/cluedo.jpg'),
-        url('images/romme.jpg');
-      background-size: 25% 25%;
-      background-repeat: repeat;
-      font-family: 'Arial Black', sans-serif;
-      font-size: 14px;
-      color: white;
-      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    .content {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 600px;
-      margin: 50px auto;
+    .container {
       text-align: center;
     }
-
-    a {
-      display: block;
-      margin: 10px 0;
-      color: cyan;
+    .pdf-links {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .pdf-link {
+      color: #fff;
+      background: #222;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
       text-decoration: none;
+      display: inline-block;
+      width: fit-content;
+      transition: background 0.2s;
     }
-
-    input[type="password"] {
-      padding: 8px;
-      font-size: 14px;
-      width: 180px;
-      margin-top: 20px;
+    .pdf-link:hover {
+      background: #444;
     }
-
-    button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin-left: 10px;
-      cursor: pointer;
+    .emoticon {
+      font-size: 40px;
+      margin-bottom: 18px;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h2>📚 Geheime Geschichten</h2>
-    <a href="geschichten/eineHandvollGlück.pdf" download>eine Handvoll Glück</a>
-    <a href="geschichten/derMordanR.Garfield.pdf" download>Der Mord an R. Garfield</a>
-    <a href="geschichten/Investmenttippsfür2026.pdf" download>Investment Tipps für 2026</a>
-   </div>
+  <div class="container">
+    <div class="emoticon">📚</div>
+    <div class="pdf-links">
+      <a class="pdf-link" href="eineHandvollGlueck.pdf" download>eineHandvollGlück</a>
+      <a class="pdf-link" href="derMordanRGarfield.pdf" download>derMordanR.Garfield</a>
+      <a class="pdf-link" href="Investmenttippsfuer2026.pdf" download>Investmenttippsfür2026</a>
+    </div>
   </div>
 </body>
 </html>
